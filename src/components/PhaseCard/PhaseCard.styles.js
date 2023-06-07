@@ -1,17 +1,18 @@
 import styled from "styled-components";
 import bambooFrame from "../../images/bambooFrame.svg";
 
-export const ItemStyled = styled.article`
+export const ItemStyled = styled.li`
   position: relative;
   padding: 76px 105px 92px;
 
   width: 605px;
   height: 364px;
 
-  background-color: #fff1bb;
-  background-image: url(${bambooFrame});
+  background-image: url(${bambooFrame}),
+    linear-gradient(to right, #fff1bb 0%, #fff1bb 100%);
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size: contain, 500px 280px;
+  background-position: left top, 50px 38px;
 `;
 
 export const CardTitle = styled.h2`
@@ -27,16 +28,6 @@ export const CardTitle = styled.h2`
 
 export const CardList = styled.ul`
   list-style: circle inside;
-
-  ::before {
-    content: " ";
-    position: absolute;
-    left: 50px;
-    top: 38px;
-
-    width: 500px;
-    height: 280px;
-  }
 `;
 
 export const CardItem = styled.li`

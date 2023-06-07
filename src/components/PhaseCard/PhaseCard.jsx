@@ -1,14 +1,13 @@
 import { CardItem, CardList, CardTitle, ItemStyled } from "./PhaseCard.styles";
 
-export const PhaseCard = () => {
+export const PhaseCard = ({ title, list }) => {
   return (
     <ItemStyled>
-      <CardTitle>Phase 1</CardTitle>
+      <CardTitle>{title}</CardTitle>
       <CardList>
-        <CardItem>Special events</CardItem>
-        <CardItem>Launch social networks</CardItem>
-        <CardItem>Launch token</CardItem>
-        <CardItem>Launch token on DEX</CardItem>
+        {list.map((card) => {
+          return <CardItem>{card}</CardItem>;
+        })}
       </CardList>
     </ItemStyled>
   );
