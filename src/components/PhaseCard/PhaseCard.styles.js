@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import bambooFrame from "../../images/bambooFrame.svg";
 
-export const ItemStyled = styled.li`
+export const ItemStyled = styled.div`
   position: relative;
   padding: 58px 100px 66px;
   flex-shrink: 0;

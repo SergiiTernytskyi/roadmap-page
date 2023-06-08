@@ -3,9 +3,9 @@ import styled from "styled-components";
 import backgroundImage from "../../images/background.svg";
 
 export const Section = styled.section`
-  position: relative;
   padding: 95px 20px 0;
   overflow: hidden;
+  overscroll-behavior: none;
 
   margin: 0 auto;
 
@@ -34,6 +34,6 @@ export const Section = styled.section`
 
 export const ListStyled = styled.ul`
   display: flex;
+  flex-wrap: nowrap;
   gap: 40px;
-  overflow-x: auto;
 `;

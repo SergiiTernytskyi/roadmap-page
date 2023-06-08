@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 export const TitleStyled = styled.h1`
+  margin: 0 auto;
   margin-bottom: 28px;
 
   font-family: "Black Han Sans";
@@ -12,13 +13,9 @@ export const TitleStyled = styled.h1`
   color: #1c303a;
 
   @media (min-width: 744px) {
-    top: 42px;
-    left: 205px;
     font-size: 48px;
   }
   @media (min-width: 1440px) {
-    top: 42px;
-    left: 487px;
     font-size: 64px;
   }
 `;
@@ -26,7 +23,9 @@ export const TitleStyled = styled.h1`
 export const TitleShadow = styled.div`
   position: absolute;
   top: 42px;
-  left: 54px;
+  left: 0px;
+  right: 0;
+  margin: 0 auto;
   z-index: -1;
 
   font-family: "Yellowtail";
@@ -39,13 +38,9 @@ export const TitleShadow = styled.div`
   opacity: 0.2;
 
   @media (min-width: 744px) {
-    top: 42px;
-    left: 205px;
     font-size: 100px;
   }
   @media (min-width: 1440px) {
-    top: 42px;
-    left: 487px;
     font-size: 140px;
   }
 `;
