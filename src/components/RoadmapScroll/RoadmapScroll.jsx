@@ -1,6 +1,6 @@
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useEffect, useRef } from "react";
+import { useLayoutEffect, useRef } from "react";
 
 import { phasesList } from "../../data/phasesList";
 import { PhaseCard } from "../PhaseCard/PhaseCard";
@@ -14,32 +14,29 @@ export const RoadmapScroll = () => {
   const cards = useRef([]);
   const cardsContainer = useRef();
 
-  console.log(cards.current);
-  console.log(cardsContainer);
-
   const createCardsRefs = (card, index) => {
     cards.current[index] = card;
   };
 
-  useEffect(() => {
-    const totalCards = cards.current.length;
-    console.log(
-      3 * cards.current[0].offsetWidth - cardsContainer.current.offsetWidth
-    );
+  useLayoutEffect(() => {
+    const ctx = gsap.context(() => {
+      const totalCards = cards.current.length;
 
-    gsap.to(cards.current, {
-      xPercent: -100 * (cards.current.length - 2),
-      ease: "none",
-      scrollTrigger: {
-        trigger: cardsContainer.current,
-        invalidateOnRefresh: true,
-        pin: true,
-        scrub: 1,
-        snap: 1 / (totalCards - 1),
-        start: "top top",
-        end: () => "+=" + cards.current[0].offsetWidth,
-      },
-    });
+      gsap.to(cards.current, {
+        xPercent: -100 * (totalCards - 1),
+        ease: "none",
+        scrollTrigger: {
+          trigger: cardsContainer.current,
+          invalidateOnRefresh: true,
+          pin: true,
+          scrub: 1,
+          snap: 1 / (totalCards - 1),
+          start: "top top",
+          end: () => "+=" + cards.current[0].offsetWidth,
+        },
+      });
+    }, cardsContainer.current);
+    return () => ctx.revert();
   }, []);
 
   return (
