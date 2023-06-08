@@ -24,10 +24,7 @@ export const RoadmapScroll = () => {
       console.log(3 * cards.current[0].offsetWidth);
 
       gsap.to(cards.current, {
-        xPercent:
-          cardsContainer.current >= 744
-            ? -100 * (totalCards - 1)
-            : -100 * totalCards,
+        xPercent: -100 * totalCards,
         ease: "none",
         scrollTrigger: {
           trigger: cardsContainer.current,
