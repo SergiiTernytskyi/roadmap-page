@@ -21,9 +21,13 @@ export const RoadmapScroll = () => {
   useLayoutEffect(() => {
     const ctx = gsap.context(() => {
       const totalCards = cards.current.length;
+      console.log(3 * cards.current[0].offsetWidth);
 
       gsap.to(cards.current, {
-        xPercent: -100 * (totalCards - 1),
+        xPercent:
+          cardsContainer.current >= 744
+            ? -100 * (totalCards - 1)
+            : -100 * totalCards,
         ease: "none",
         scrollTrigger: {
           trigger: cardsContainer.current,
@@ -32,7 +36,7 @@ export const RoadmapScroll = () => {
           scrub: 1,
           snap: 1 / (totalCards - 1),
           start: "top top",
-          end: () => "+=" + cards.current[0].offsetWidth,
+          end: () => "+=" + (3 * cards.current[0].offsetWidth + 80),
         },
       });
     }, cardsContainer.current);
