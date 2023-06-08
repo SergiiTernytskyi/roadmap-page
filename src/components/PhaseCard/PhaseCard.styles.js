@@ -3,7 +3,8 @@ import bambooFrame from "../../images/bambooFrame.svg";
 
 export const ItemStyled = styled.li`
   position: relative;
-  padding: 76px 105px 92px;
+  padding: 76px 140px 92px;
+  flex-shrink: 0;
 
   width: 605px;
   height: 364px;
@@ -27,7 +28,7 @@ export const CardTitle = styled.h2`
 `;
 
 export const CardList = styled.ul`
-  list-style: circle inside;
+  list-style: disc;
 `;
 
 export const CardItem = styled.li`

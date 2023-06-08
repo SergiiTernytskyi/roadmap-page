@@ -5,8 +5,8 @@ export const PhaseCard = ({ title, list }) => {
     <ItemStyled>
       <CardTitle>{title}</CardTitle>
       <CardList>
-        {list.map((card) => {
-          return <CardItem>{card}</CardItem>;
+        {list.map((card, index) => {
+          return <CardItem key={index}>{card}</CardItem>;
         })}
       </CardList>
     </ItemStyled>

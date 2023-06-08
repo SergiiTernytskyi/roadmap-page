@@ -5,25 +5,47 @@ export const TitleStyled = styled.h1`
 
   font-family: "Black Han Sans";
   font-weight: 400;
-  font-size: 64px;
+  font-size: 40px;
   line-height: 1.25;
   text-align: center;
   text-transform: capitalize;
   color: #1c303a;
+
+  @media (min-width: 744px) {
+    top: 42px;
+    left: 205px;
+    font-size: 48px;
+  }
+  @media (min-width: 1440px) {
+    top: 42px;
+    left: 487px;
+    font-size: 64px;
+  }
 `;
 
 export const TitleShadow = styled.div`
   position: absolute;
   top: 42px;
-  left: 487px;
+  left: 54px;
   z-index: -1;
 
   font-family: "Yellowtail";
   font-weight: 400;
-  font-size: 140px;
+  font-size: 80px;
   line-height: 1.06;
   text-align: center;
   text-transform: capitalize;
   color: #859a50;
   opacity: 0.2;
+
+  @media (min-width: 744px) {
+    top: 42px;
+    left: 205px;
+    font-size: 100px;
+  }
+  @media (min-width: 1440px) {
+    top: 42px;
+    left: 487px;
+    font-size: 140px;
+  }
 `;

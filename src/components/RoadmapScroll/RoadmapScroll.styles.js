@@ -4,20 +4,36 @@ import backgroundImage from "../../images/background.svg";
 
 export const Card = styled.section`
   position: relative;
+  padding: 0 70px;
+  overflow: hidden;
 
   margin: 0 auto;
-  padding-top: 120px;
+  padding-top: 95px;
 
-  width: 1440px;
-  height: 800px;
+  width: 375px;
+  height: 600px;
 
   background-image: url(${backgroundImage});
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size: cover;
+  background-position: 50% 50%;
+
+  @media (min-width: 744px) {
+    width: 744px;
+    height: 700px;
+    background-size: cover;
+    background-position: top left;
+  }
+  @media (min-width: 1440px) {
+    width: 1440px;
+    height: 800px;
+    background-size: contain;
+    padding-top: 120px;
+  }
 `;
 
 export const ListStyled = styled.ul`
-  /* display: flex; */
+  display: flex;
   gap: 40px;
-  overflow-x: scroll;
+  overflow-x: auto;
 `;
