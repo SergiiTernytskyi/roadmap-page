@@ -2,13 +2,12 @@ import styled from "styled-components";
 
 import backgroundImage from "../../images/background.svg";
 
-export const Card = styled.section`
+export const Section = styled.section`
   position: relative;
-  padding: 0 70px;
+  padding: 95px 20px 0;
   overflow: hidden;
 
   margin: 0 auto;
-  padding-top: 95px;
 
   width: 375px;
   height: 600px;
@@ -19,6 +18,7 @@ export const Card = styled.section`
   background-position: 50% 50%;
 
   @media (min-width: 744px) {
+    padding: 95px 70px 0;
     width: 744px;
     height: 700px;
     background-size: cover;
